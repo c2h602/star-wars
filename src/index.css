@@ -1,0 +1,88 @@
+:root {
+  font-family: "Karla", sans-serif;
+  line-height: 100%;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  color: rgba(255, 255, 255, 0.87);
+  
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: inherit;
+}
+a:hover {
+  color: rgba(246, 247, 249, 1);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #FFFFFF 30.32%, #F5F5F5 100%);
+  background-attachment: fixed;
+}
+
+h1, h2 {
+  font-size: 4.5em;
+  letter-spacing: 4px;
+  line-height: 100%;
+  font-weight: 400;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
+}
+
+button {
+  color: rgba(33, 33, 33, 1);
+  font-size: 1.4rem;
+  line-height: 100%;
+  font-weight: 700;
+  width: 14.4rem;
+  height: 4.1rem;
+  box-shadow: 0px -9px 0px 0px rgba(0, 0, 0, 0.18) inset;
+  border-radius: 11px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+
+select,
+option {
+  background-color: rgba(242, 242, 242, 1);
+  box-shadow: 2px 2px 2px 0px rgba(33, 33, 33, 0.1);
+  width: 8.45rem;
+  height: 1.5rem;
+  border: transparent;
+  outline: none;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+option {
+  box-shadow: 4px 4px 8px 0px rgba(1, 28, 64, 0.2);
+}
+
+
+@media (prefers-color-scheme: light) {
+  
+}
