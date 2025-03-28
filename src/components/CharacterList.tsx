@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useCharacterStore } from "../store/useCharacterStore";
+import { getGenderClass } from "../getGenderClass";
 
 export default function CharacterList() {
   const {
@@ -18,46 +19,52 @@ export default function CharacterList() {
     <div className="character-list">
       {isLoading && characters.length === 0 && <span className="loader"></span>}
 
-      {filteredCharacters.map((char) => (
-        <article
-          key={char.id}
-          className="character-card"
-          onClick={() => selectCharacter(char.id)}
-        >
-          <div className="character-card__wrapper">
-            <h3 className="character-card__name">{char.name}</h3>
+      {filteredCharacters.map((char) => {
+        const genderClassName = getGenderClass(char.gender);
 
-            <div className="character-card__parameters">
-              <div className="parameters__item">
-                {char.height !== "unknown" && (
-                  <span className="parameters__value">{char.height}</span>
-                )}
-                {char.height !== "unknown" && (
-                  <span className="parameters__label">height</span>
-                )}
+        return (
+          <article
+            key={char.id}
+            className="character-card"
+            onClick={() => selectCharacter(char.id)}
+          >
+            <div className="character-card__wrapper">
+              <h3 className="character-card__name">{char.name}</h3>
+
+              <div className="character-card__parameters">
+                <div className="parameters__item">
+                  {char.height !== "unknown" && (
+                    <span className="parameters__value">{char.height}</span>
+                  )}
+                  {char.height !== "unknown" && (
+                    <span className="parameters__label">height</span>
+                  )}
+                </div>
+
+                <div className="parameters__item">
+                  {char.mass !== "unknown" && (
+                    <span className="parameters__value">{char.mass}</span>
+                  )}
+                  {char.mass !== "unknown" && (
+                    <span className="parameters__label">mass</span>
+                  )}
+                </div>
               </div>
 
-              <div className="parameters__item">
-                {char.mass !== "unknown" && (
-                  <span className="parameters__value">{char.mass}</span>
+              <div className="character-card__info">
+                {char.gender !== "n/a" && (
+                  <span className={`info__gender ${genderClassName}`}>
+                    {char.gender}
+                  </span>
                 )}
-                {char.mass !== "unknown" && (
-                  <span className="parameters__label">mass</span>
+                {char.birth_year !== "unknown" && (
+                  <span className="info__birth">{char.birth_year}</span>
                 )}
               </div>
             </div>
-
-            <div className="character-card__info">
-              {char.gender !== "n/a" && (
-                <span className="info__gender">{char.gender}</span>
-              )}
-              {char.birth_year !== "unknown" && (
-                <span className="info__birth">{char.birth_year}</span>
-              )}
-            </div>
-          </div>
-        </article>
-      ))}
+          </article>
+        );
+      })}
     </div>
   );
 }

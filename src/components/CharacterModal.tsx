@@ -4,11 +4,14 @@ import close from "../assets/closeIcon.png";
 import female from "../assets/female.png";
 import male from "../assets/male.png";
 import defaultIcon from "../assets/default.png";
+import { getGenderClass } from "../getGenderClass";
 
 export default function CharacterModal() {
   const { selectedCharacter, clearSelectedCharacter } = useCharacterStore();
 
   if (!selectedCharacter) return null;
+
+  const genderClassName = getGenderClass(selectedCharacter.gender);
 
   return (
     <div className="modal">
@@ -30,7 +33,7 @@ export default function CharacterModal() {
 
           <div className="character-card__info">
             {selectedCharacter.gender !== "n/a" && (
-              <span className="info__gender">{selectedCharacter.gender}</span>
+              <span className={`info__gender ${genderClassName}`}>{selectedCharacter.gender}</span>
             )}
             {selectedCharacter.birth_year !== "unknown" && (
               <span className="info__birth">
