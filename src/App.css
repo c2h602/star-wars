@@ -339,6 +339,12 @@
   margin-left: 47rem;
 }
 
+
+
+
+
+
+
 .not-found {
   background-color: rgba(23, 0, 47, 1);
   display: flex;
@@ -346,30 +352,40 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+  height: 100vh;
 }
 
-.not-found__text {
+
+
+.not-found__container {
   box-shadow: 4px 4px 24px 0px rgba(1, 17, 38, 0.2);
-  font-size: 43.75rem;
+
+  font-size: 44rem;
+  font-weight: 700;
+  letter-spacing: 4px;
   color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-  justify-content: center;
+
+  background-image: url('assets/deathStar.png');
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+
+  
+  display: inline-flex;
+ 
+
+  display: flex;
   align-items: center;
-  height: 100vh;
-  position: relative;
-  display: inline-block;
+  justify-content: center;
+
 
   border: 4px solid red;
   
 }
 
-.not-found__text img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
+
+
 
 .not-found__button {
   background-color: rgba(115, 214, 119, 1);
@@ -378,6 +394,12 @@
 .not-found__button:hover {
   background-color: rgb(105, 202, 109);
 }
+
+
+
+
+
+
 
 @media (max-width: 1024px) {
   .home {

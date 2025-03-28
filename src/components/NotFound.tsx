@@ -6,8 +6,8 @@ export default function NotFound() {
   return (
     <div className="not-found">
 
-      <div className="not-found__text">
-        <img src={notFound} />
+      <div className="not-found__container">
+        {/* <img src={notFound} /> */}
         <span>404</span>
       </div>
 
