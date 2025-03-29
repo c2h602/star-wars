@@ -18,7 +18,7 @@ export default function Characters() {
     <>
       <InfiniteScroll
         dataLength={characters.length}
-        next={fetchCharacters}
+        next={() => fetchCharacters(1)}
         hasMore={hasMore}
       >
         <div className="characters">
