@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 
 interface IButton {
   children: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   className: string;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 export default function Button({

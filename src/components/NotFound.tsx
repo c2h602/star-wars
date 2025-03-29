@@ -11,7 +11,9 @@ export default function NotFound() {
       </div>
 
       <NavLink to="/">
-        <Button className="not-found__button">Return</Button>
+        <Button className="not-found__button">
+          Return
+        </Button>
       </NavLink>
 
       <div className="stars"></div>
