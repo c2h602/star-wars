@@ -59,12 +59,12 @@ export const useCharacterStore = create<CharacterStore>((set, get) => ({
     const data1 = await response1.json();
     const data2 = await response2.json();
 
-    const charactersWithId1 = data1.results.map((char) => ({
+    const charactersWithId1 = data1.results.map((char: { url: string; }) => ({
       ...char,
       id: char.url.split("/").filter(Boolean).pop(),
     }));
 
-    const charactersWithId2 = data2.results.map((char) => ({
+    const charactersWithId2 = data2.results.map((char: { url: string; }) => ({
       ...char,
       id: char.url.split("/").filter(Boolean).pop(),
     }));

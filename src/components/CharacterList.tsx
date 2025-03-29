@@ -11,7 +11,7 @@ export default function CharacterList() {
   } = useCharacterStore();
 
   useEffect(() => {
-    fetchCharacters();
+    fetchCharacters(1);
   }, []);
 
   return (

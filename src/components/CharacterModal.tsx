@@ -15,7 +15,7 @@ export default function CharacterModal() {
 
   return (
     <div className="modal">
-      <Button className="modal__button" onClick={clearSelectedCharacter}>
+      <Button className="modal__button" onClick={clearSelectedCharacter} disabled={false}>
         <img src={close} />
       </Button>
 

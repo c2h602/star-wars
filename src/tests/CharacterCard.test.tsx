@@ -42,7 +42,7 @@ describe("CharacterCard", () => {
 
     const genderElem = screen.getByText("male");
     expect(genderElem).toBeInTheDocument();
-    expect(genderElem).toHaveClass("info__gender");
+    expect(genderElem).toHaveClass("info__gender-male");
 
     const birthElem = screen.getByText("200BBY");
     expect(birthElem).toBeInTheDocument();
@@ -66,5 +66,15 @@ describe("CharacterCard", () => {
 
     expect(mockSelectCharacter).toHaveBeenCalledTimes(1);
     expect(mockSelectCharacter).toHaveBeenCalledWith(mockCharacter.id);
+  });
+
+  it("корректно отображает цвета тегов в карточке", () => {
+    render(<CharacterCard char={mockCharacter} />);
+
+    const genderTag = screen.getByText("male");
+    expect(genderTag).toHaveStyle("background-color: rgba(115, 214, 119)");
+
+    const birthTag = screen.getByText("200BBY");
+    expect(birthTag).toHaveStyle("background-color: rgba(7, 214, 242)");
   });
 });
