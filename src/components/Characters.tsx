@@ -20,6 +20,7 @@ export default function Characters() {
         dataLength={characters.length}
         next={() => fetchCharacters(1)}
         hasMore={hasMore}
+        loader={null}
       >
         <div className="characters">
 
