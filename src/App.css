@@ -397,11 +397,17 @@
 
 .not-found__image {
   overflow: hidden;
-}
-.not-found__image { 
   transition: scale 400ms;
 }
 .not-found__image:hover {
+  scale: 110%;
+}
+
+.character-card {
+  overflow: hidden;
+  transition: scale 400ms;
+}
+.character-card:hover {
   scale: 110%;
 }
 

@@ -10,9 +10,8 @@ type EyeColor =
   | "green"
   | string;
 
-type Language = 'en' | 'wookiee'
 
-interface Character {
+export interface Character {
   id: string;
   name: string;
   height: string;
@@ -75,7 +74,7 @@ export const useCharacterStore = create<CharacterStore>((set, get) => ({
       filteredCharacters: [...characters, ...charactersWithId1, ...charactersWithId2],
       page: page + 2,
       isLoading: false,
-      hasMore: !!data2.next, // Проверяем, есть ли ещё страницы
+      hasMore: !!data2.next,
     });
   },
 
